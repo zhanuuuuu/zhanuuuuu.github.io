@@ -1,0 +1,52 @@
+(1)查看当前Activity  ：adb shell "dumpsys window w | grep name="
+
+(2)查看当前栈顶的Activity ：adb shell dumpsys activity | grep "mFocusedActivity"
+
+(3)查看当前栈顶的Activity的Fragment ：adb shell dumpsys activity your.package.name
+
+查看帮助：adb shell dumpsys activity -h
+
+
+G:\sdk\platform-tools
+
+
+https://blog.csdn.net/qq_37293612/article/details/54959726    图表开发
+
+https://blog.csdn.net/lzh131606/article/details/66611308      图表开发
+
+https://blog.csdn.net/lzh131606/article/details/69814436      自己封装 DialogFragment
+
+
+https://blog.csdn.net/lmj623565791/article/details/37815413    DialogFragment
+
+
+https://blog.csdn.net/forezp/article/details/70148833         SPRING  CLOUD
+
+https://github.com/forezp/SpringCloudLearning                 Spring Cloud 
+
+https://github.com/Javen205/IJPay                             支付宝
+
+
+http://www.quickburro.org                                     樵夫   
+
+
+https://github.com/Tencent/weui.js/blob/master/docs/README.md    vue.js
+
+https://codegit.net/jlee/weixin-java-tools/src/master        微信公众号
+
+https://blog.csdn.net/achenyuan/article/details/71333596?locationNum=5&fps=1  weixin_java_mp
+
+
+http://www.17sucai.com/user/966884?cid=47   后端下载
+
+
+
+https://zhanuuuuu.github.io/%E2%9C%8E%EF%B9%8F%E0%B9%93%E2%82%AF%E3%8E%95%CE%B6%E0%B8%B1%CD%A1%E2%9D%A6%EF%B9%8F%EF%B9%8F.html
+
+
+
+
+https://github.com/oukingtim/king-admin                    springboot学习
+
+
+https://blog.csdn.net/flfna/article/details/5598201       servlet3.0新特性
