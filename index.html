@@ -1,9 +1,38 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>小白成长之路</title>
+		<title>软件学习过程</title>
 		<meta charset="utf-8"/>
 		<link rel="stylesheet" href="./css/layout.css" />
+		<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				
+			
+		    	$.ajax({
+		        type: "GET",
+		        url: "http://115.29.145.135:8080/GYL/GYL/myservlet?no=我是来自接口的数据",
+		        success: function(msg){
+		        alert(msg);
+				   }
+				});  
+
+						
+			})
+		</script>
+		<style type="text/css">
+			.pay:hover {
+
+			 transform: rotatey(360deg);
+			-webkit-transform: rotatey(360deg);
+			-o-transform: rotatey(360deg);
+			-moz-transform: rotatey(360deg);
+			-ms-transform: rotatey(360deg);
+			transition: 0.5s all;
+
+			}
+		
+		</style>
 	</head>
 	<body >
 		<!--网站的容器qqq-->
@@ -11,7 +40,7 @@
 			<!--网站头部11-->
 			<div id="header">
 				<div id="logo">
-					<a href="#">大傻二傻的成长!!!!!! </a><span style="font-style: italic;font-size: 16px;"><span style="color: #fff;">You will</span> never walk alone!</span>
+					<a href="#">小白的成长!!!!!! </a><span style="font-style: italic;font-size: 16px;"><span style="color: #fff;">You will</span> never walk alone!</span>
 				</div>
 				<div id="search" >
 					<h3 style="color: red;">技术交流QQ群:132117572</h3>
@@ -124,6 +153,33 @@
 							
 						</ul>
 					</div>
+
+					<div class="title">
+						<h2>其他</h2>
+					</div>
+					<div class="content">
+						<ul>
+							<li><a href="http://www.quickburro.org ">官网quickburro</a></li>
+							
+						</ul>
+						<ul>
+							<li><a href="https://blog.csdn.net/lzh131606/article/details/66611308">andriod报表开发</a></li>
+							
+						</ul>
+						<ul>
+							<li><a href="https://blog.csdn.net/forezp/article/details/70148833">Spring Cloud1</a></li>
+							
+						</ul>
+						<ul>
+							<li><a href="https://github.com/forezp/SpringCloudLearning ">Spring Cloud2</a></li>
+							
+						</ul>
+						<ul>
+							<li><a href="https://codegit.net/jlee/weixin-java-tools/src/master">微信相关开发</a></li>
+							
+						</ul>
+						
+					</div>
 				</div>
 				<!--右侧侧边栏-->
 				<div id="right">
@@ -159,7 +215,7 @@ Delphi是一个集成开发环境（IDE），使用的是由传统Pascal语言�
 			<!--尾部-->
 			<div id="footer">
 				<h1>打赏</h1>
-				<img src="img/pay.png" style="width: 150px;height: 150px;"><br/>
+				<img src="img/pay.png" style="width: 150px;height: 150px;" class="pay"><br/>
 				&copy;Copyright (c) 2018 .All Rights reserved
 				
 			</div>
