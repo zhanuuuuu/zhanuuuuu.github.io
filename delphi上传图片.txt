@@ -1,0 +1,169 @@
+procedure TfrmGoodManagement.goodImageDblClick(Sender: TObject);
+var
+  openDialog:TOpenPictureDialog;
+  imgname,gExePath,success:string;
+  BatchSql:TStringList;
+  Parcel: TQBParcel;
+   //tream: TMemoryStream;
+   Stream:TMemoryStream;
+
+   sql,updateSql:string;
+  retstr:string;
+begin
+
+     gExePath:=ExtractFilePath(Paramstr(0));
+       gExePath := gExePath + 'Goods\';
+      if not DirectoryExists(gExePath) then
+       CreateDirectory(PChar(ExtractFilePath(ParamStr(0))+'Goods'),nil);
+
+
+    openDialog:=TOpenPictureDialog.Create(nil);
+   if Trim(cdGoodNo.Text)='' then
+  begin
+    ShowMessage('请选择要更换图片的商品');
+    Exit;
+  end;
+    if  openDialog.Execute then
+    begin
+      imgname:=openDialog.FileName;
+        if CheckImageType(imgname)=IT_PNG then
+          begin
+           // ShowMessage('png');
+            Parcel:=TQBParcel.create; 
+           Stream:=TMemoryStream.Create;
+           Stream.LoadFromFile(imgname);
+           Parcel.PutStreamGoods('ImageChangeZmy',Stream);
+           Parcel.PutStringGoods('cGoodsImagePath',cdBarcode.Text+'.png',gdInput);
+           FreeAndNil(Stream);
+
+            if  dmSys.adoComm.UpdateRecord('Posmanagement_main.dbo.t_Goods','cgoodsno='''+trim(cdGoodNo.Text)+'''',Parcel) then
+            begin
+               FreeAndNil(Parcel);
+
+               updateSql:=Trim(cdBarcode.Text+'.png');
+                sql:='update  Posmanagement_main.dbo.t_cStoreGoods  '+
+                ' set cGoodsImagePath='+QuotedStr(updateSql)+
+                ' where  cGoodsNo ='+QuotedStr(trim(cdGoodNo.Text));
+
+                if dmSys.rudComm.ExecuteSql(sql,False,False,retstr) then
+                begin
+
+                end
+                else
+                begin
+
+                dmSys.rudComm.GetLastError(ErrorCode,ErrorText);
+                ShowMessage('请检查连接：'+errorcode+'-'+errortext);
+                Exit;
+                end;
+
+
+                with cdsList do
+               begin
+                 Edit;
+                 FieldByName('cGoodsImagePath').value:=trim(cdBarcode.Text)+'.png';
+                 Post;
+               end;
+
+              
+                 success:=PostJava(TomcatNodeID+'Simple_onlineManger/GoodImage',cdBarcode.Text,'png');
+                 //ShowMessage(PChar(success));
+                 if Trim(success)='1' then
+                     begin
+
+                       goodImage.Picture.Create.LoadFromFile(imgname);
+                      goodImage.Picture.SaveToFile(gExePath+trim(cdBarcode.Text)+'.png');
+
+                      ShowMessage('图片上传成功');
+                     exit;
+
+                 end
+                 else
+                 begin
+                   ShowMessage('图片上传失败,网络中断');
+                     exit;
+                 end;
+
+
+
+            end
+            else
+            begin
+                FreeAndNil(Parcel);
+                dmSys.adoComm.GetLastError(ErrorCode,ErrorText);
+                ShowMessage('图片上传失败,中间件断开连接'+ErrorCode+ErrorText);
+               exit;
+            end;
+
+          end
+         else
+         begin
+            Parcel:=TQBParcel.create; 
+           Stream:=TMemoryStream.Create;
+           Stream.LoadFromFile(imgname);
+           Parcel.PutStreamGoods('ImageChangeZmy',Stream);
+           Parcel.PutStringGoods('cGoodsImagePath',Trim(cdBarcode.Text)+'.jpg',gdInput);
+           FreeAndNil(Stream);
+
+            if  dmSys.adoComm.UpdateRecord('Posmanagement_main.dbo.t_Goods','cgoodsno='''+trim(cdGoodNo.Text)+'''',Parcel) then
+            begin
+               FreeAndNil(Parcel);
+
+               sql:='update  Posmanagement_main.dbo.t_cStoreGoods  '+
+                ' set cGoodsImagePath='+QuotedStr(cdBarcode.Text+'.jpg')+
+                ' where  cGoodsNo ='+QuotedStr(trim(cdGoodNo.Text));
+               //ShowMessage(sql);
+                if dmSys.rudComm.ExecuteSql(sql,False,False,retstr) then
+                begin
+
+                end
+                else
+                begin
+
+                dmSys.rudComm.GetLastError(ErrorCode,ErrorText);
+                ShowMessage('请检查连接：'+errorcode+'-'+errortext);
+                Exit;
+                end;
+
+                
+
+
+                with cdsList do
+               begin
+                 Edit;
+                 FieldByName('cGoodsImagePath').value:=trim(cdBarcode.Text)+'.jpg';
+                 Post;
+               end;
+
+              success:=PostJava(TomcatNodeID+'Simple_onlineManger/GoodImage',cdBarcode.Text,'jpg');
+              //showMessage(PChar(success));
+               if Trim(success)='1' then
+               begin
+                 goodImage.Picture.Create.LoadFromFile(imgname);
+                  goodImage.Picture.SaveToFile(gExePath+trim(cdBarcode.Text)+'.jpg');
+
+                  ShowMessage('图片上传成功');
+                   exit;
+               end
+               else
+               begin
+                 ShowMessage('图片上失败,网络中断');
+                   exit;
+               end;
+
+            end
+            else
+            begin
+                FreeAndNil(Parcel);
+               dmSys.adoComm.GetLastError(ErrorCode,ErrorText);
+                ShowMessage('图片上传失败,中间件断开连接'+ErrorCode+ErrorText);
+               exit;
+            end;
+
+
+         end;
+
+      end;
+
+
+end;
