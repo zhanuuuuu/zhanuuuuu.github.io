@@ -37,7 +37,7 @@ https://codegit.net/jlee/weixin-java-tools/src/master        微信公众号
 https://blog.csdn.net/achenyuan/article/details/71333596?locationNum=5&fps=1  weixin_java_mp
 
 
-http://www.17sucai.com/user/966884?cid=47   后端下载
+http://www.17sucai.com/user/966884?cid=47   17后台页面框架下载
 
 
 
@@ -49,4 +49,51 @@ https://zhanuuuuu.github.io/%E2%9C%8E%EF%B9%8F%E0%B9%93%E2%82%AF%E3%8E%95%CE%B6%
 https://github.com/oukingtim/king-admin                    springboot学习
 
 
+https://blog.csdn.net/sinat_30185177/article/details/73550377    log4j  详解
+
+
 https://blog.csdn.net/flfna/article/details/5598201       servlet3.0新特性
+
+
+https://www.cnblogs.com/liyanbin/p/5951869.html           通讯协议 
+
+font awesome图标
+
+
+https://www.cnblogs.com/JavaSubin/p/5294721.html           连接池详解
+
+http://www.importnew.com/1993.html                         Java GC 处理
+
+user.name "zhanuuuu"
+git config --global user.email "1084716544@qq.com"
+
+
+C:\Windows\SoftwareDistribution\Download
+
+
+https://github.com/ityouknow/spring-boot-examples
+
+
+http://asciiflow.com/
+
+
+https://github.com/happyfish100/fastdfs-client-java
+
+https://github.com/leelance/spring-boot-all  消息地列的地址
+
+https://github.com/guozhengXia/OkHttpUtils  andriod okhttp 的二次封装使用方法 
+
+
+https://github.com/jackzgzzh/waterlab      bootstrap 
+
+
+https://www.cnblogs.com/mfrank/p/7898752.html    spring mvc
+
+
+https://www.cnblogs.com/wuyifu/p/7687628.html   过滤器   拦截器
+
+
+https://blog.csdn.net/u012706811/article/details/52185345  thymeleaf
+
+
+https://github.com/1428610664/awesome-github-wechat-weapp   小程序
