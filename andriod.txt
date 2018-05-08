@@ -99,3 +99,8 @@ https://blog.csdn.net/u012706811/article/details/52185345  thymeleaf
 https://github.com/1428610664/awesome-github-wechat-weapp   小程序
 
 https://github.com/ZQiang94/Andriod-collect-blogs            adriod  大佬文章
+
+https://www.w3cschool.cn/ecmascript/maep1q6a.html            ES
+
+
+https://www.cnblogs.com/andy-zhou/p/5317820.html             java web 异常统一处理
