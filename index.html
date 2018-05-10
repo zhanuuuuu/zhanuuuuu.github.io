@@ -17,6 +17,8 @@
 
 						
 			})
+
+			
 		</script>
 		<style type="text/css">
 			.pay:hover {
@@ -27,10 +29,10 @@
 			-moz-transform: rotatey(360deg);
 			-ms-transform: rotatey(360deg);
 			transition: 0.5s all;
+			
 			/*
 				position:absolute;
 			 */
-			
 
 			}
 		
@@ -38,11 +40,9 @@
 	</head>
 	<body >
 		<!--网站的容器qqq-->
-		
-			
-
-		
-		<div id="wrapper">
+	<div >
+	<div style="width: 100%;z-index: 0;position: absolute;">
+		<div id="wrapper" >
 			<!--网站头部11-->
 			<div id="header">
 				<div id="logo">
@@ -251,14 +251,14 @@ Delphi是一个集成开发环境（IDE），使用的是由传统Pascal语言�
 					<ul>
 					<li style="float:left;">
 						<p style="font-size: 16px;color: red;font-weight:bold;">微信</p>
-						<img src="img/pay.png" style="width: 150px;height: 150px;display:inline-block;" class="pay"><br/>
+						<img src="img/pay.png" style="width: 150px;height: 150px;display:inline-block;" class="pay" onclick="weixinpay(this);"><br/>
 					</li>
 					<li style="float:left;">
 						&nbsp;&nbsp;&nbsp;
 					</li>
 					<li style="float:left;">
 						<p style="font-size: 16px;color: red;font-weight:bold;">支付宝</p>
-						<img src="img/alipay.png" style="width: 150px;height: 150px;display: inline;" class="pay"><br/>
+						<img src="img/alipay.png" style="width: 150px;height: 150px;display: inline;" class="pay" onclick="alipay(this);"><br/>
 					</li>
 					<li style="clear: both;">
 						<p>&copy;Copyright (c) 2018 .All Rights reserved</p>
@@ -268,8 +268,38 @@ Delphi是一个集成开发环境（IDE），使用的是由传统Pascal语言�
 			</div>
 			
 		</div>
+	</div>	
 
+		<div style="background-image: url('img/alipay.png');background-color: #F9F0CF;width: 20%;height: 400px;z-index: 1;left: 50%; transform: translateX(-50%);top: 1500px;position: absolute;visibility:hidden; background-repeat: no-repeat;" id="obj" onclick="hidd(this);">
+			
+		</div>
+		<div style="background-image: url('img/pay.png');background-color: #F9F0CF;width: 20%;height: 400px;z-index: 1;left: 50%; transform: translateX(-50%);top: 1500px;position: absolute;visibility:hidden; background-repeat: no-repeat;" id="obj1" onclick="hidd1(this);">
+			
+		</div>
 		
-		
+	</div>	
 	</body>
+	<script type="text/javascript">
+		
+		function alipay(e){
+			document.getElementById('obj1').style.visibility='hidden';	
+				var div1 = document.getElementById('obj');
+	      		div1.style.visibility='visible';
+			}
+		function weixinpay(e){
+			document.getElementById('obj').style.visibility='hidden';	
+			var div1 = document.getElementById('obj1');
+	      		div1.style.visibility='visible';
+		}
+		function hidd(e){
+			var div1 = document.getElementById('obj');
+	      		div1.style.visibility='hidden';
+	      	document.getElementById('obj1').style.visibility='hidden';	
+		}
+		function hidd1(e){
+			var div1 = document.getElementById('obj1');
+	      		div1.style.visibility='hidden';
+	      	document.getElementById('obj').style.visibility='hidden';		
+		}
+	</script>
 </html>
