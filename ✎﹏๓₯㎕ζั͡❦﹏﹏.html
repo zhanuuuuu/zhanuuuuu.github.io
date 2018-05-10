@@ -13,30 +13,42 @@
 		        success: function(msg){
 		        alert(msg);
 				   }
-				});  		
+				});  
+
+						
 			})
+
+			
 		</script>
 		<style type="text/css">
 			.pay:hover {
+
 			 transform: rotatey(360deg);
 			-webkit-transform: rotatey(360deg);
 			-o-transform: rotatey(360deg);
 			-moz-transform: rotatey(360deg);
 			-ms-transform: rotatey(360deg);
 			transition: 0.5s all;
+			
+			/*
+				position:absolute;
+			 */
+
 			}
 		
 		</style>
 	</head>
 	<body >
 		<!--网站的容器qqq-->
-		<div id="wrapper">
+	<div >
+	<div style="width: 100%;z-index: 0;position: absolute;">
+		<div id="wrapper" >
 			<!--网站头部11-->
 			<div id="header">
 				<div id="logo">
 					<h3 style="color: red;">&nbsp;</h3>
 					<h3 style="color: red;">&nbsp;</h3>
-					<a href="#">软件学习!!!!!! </a><span style="font-style: italic;font-size: 16px;"><span style="color: #fff;">You will</span> never walk alone!</span>
+					<a href="#">小白的成长!!!!!! </a><span style="font-style: italic;font-size: 16px;"><span style="color: #fff;">You will</span> never walk alone!</span>
 				</div>
 				<div id="search" >
 					<h3 style="color: red;">&nbsp;</h3>
@@ -44,7 +56,8 @@
 					<h2 style="color: red;">技术交流QQ群:132117572</h2>
 					<h3 style="color: red;">&nbsp;</h3>
 					<h3 style="color: red;">&nbsp;</h3>
-					<h2 style="color: red;">本人QQ:108471654</h2>
+					<h2 style="color: red;">本人QQ:1084716544</h2>
+
 					<form action="#" method="get">
 						<input type="text" name="searchtxt" id="searchtxt" value="" class="stxt" style="display: none;" />
 						<input type="submit" name="btn_search" id="btn_search" value="GO" class="go" style="display: none;" />
@@ -81,6 +94,10 @@
 						<ul>
 							<li><a href="https://github.com/cncounter/translation/blob/master/tiemao_2014/GitHelp/GitHelp.md">git使用</a></li>
 							<li><a href="http://blog.csdn.net/maplejaw_/article/details/52874348">svn使用</a></li>
+							<li><a href="https://blog.csdn.net/wangyj1108/article/details/51444419">
+							git 搭建静态网站</a></li>
+
+							
 						</ul>
 					</div>
 						
@@ -162,24 +179,31 @@
 						<ul>
 							<li><a href="http://www.quickburro.org ">官网quickburro</a></li>
 							
-						</ul>
-						<ul>
+						
 							<li><a href="https://blog.csdn.net/lzh131606/article/details/66611308">andriod报表开发</a></li>
 							
-						</ul>
-						<ul>
+						
 							<li><a href="https://blog.csdn.net/forezp/article/details/70148833">Spring Cloud1</a></li>
 							
-						</ul>
-						<ul>
+						
 							<li><a href="https://github.com/forezp/SpringCloudLearning ">Spring Cloud2</a></li>
 							
-						</ul>
-						<ul>
+						
 							<li><a href="https://codegit.net/jlee/weixin-java-tools/src/master">微信相关开发</a></li>
 							
-						</ul>
 						
+							<li><a href="https://github.com/ZQiang94/Andriod-collect-blogs">ANDRIOD 值得一看的</a></li>
+							
+						
+							<li><a href="https://zhanuuuuu.github.io/LFWJ.apk">家天下apk下载</a></li>
+						
+							<li><a href="https://blog.csdn.net/zengcong2013/article/details/18714417">XLSReadWriteII5 安装</a></li>
+						
+							<li><a href="https://www.cnblogs.com/railgunman/p/8657060.html">XLSReadWriteII5 读文件</a></li>
+						
+							<li><a href="https://www.cnblogs.com/railgunman/p/8657060.html">XLSReadWriteII5 写文件</a></li>
+						</ul>
+
 					</div>
 				</div>
 				<!--右侧侧边栏-->
@@ -221,12 +245,61 @@ Delphi是一个集成开发环境（IDE），使用的是由传统Pascal语言�
 				</div>
 			</div>
 			<!--尾部-->
-			<div id="footer">
+			<div id="footer" style="position:relative;">
 				<h1>打赏</h1>
-				<img src="img/pay.png" style="width: 150px;height: 150px;" class="pay"><br/>
-				&copy;Copyright (c) 2018 .All Rights reserved
-				
+				<span style="position: absolute;left: 50%; transform: translateX(-50%);">
+					<ul>
+					<li style="float:left;">
+						<p style="font-size: 16px;color: red;font-weight:bold;">微信</p>
+						<img src="img/pay.png" style="width: 150px;height: 150px;display:inline-block;" class="pay" onclick="weixinpay(this);"><br/>
+					</li>
+					<li style="float:left;">
+						&nbsp;&nbsp;&nbsp;
+					</li>
+					<li style="float:left;">
+						<p style="font-size: 16px;color: red;font-weight:bold;">支付宝</p>
+						<img src="img/alipay.png" style="width: 150px;height: 150px;display: inline;" class="pay" onclick="alipay(this);"><br/>
+					</li>
+					<li style="clear: both;">
+						<p>&copy;Copyright (c) 2018 .All Rights reserved</p>
+					</li>
+				</ul>
+				</span> 
 			</div>
+			
 		</div>
+	</div>	
+
+		<div style="background-image: url('img/alipay.png');background-color: #F9F0CF;width: 20%;height: 400px;z-index: 1;left: 50%; transform: translateX(-50%);top: 1500px;position: absolute;visibility:hidden; background-repeat: no-repeat;" id="obj" onclick="hidd(this);">
+			
+		</div>
+		<div style="background-image: url('img/pay.png');background-color: #F9F0CF;width: 20%;height: 400px;z-index: 1;left: 50%; transform: translateX(-50%);top: 1500px;position: absolute;visibility:hidden; background-repeat: no-repeat;" id="obj1" onclick="hidd1(this);">
+			
+		</div>
+		
+	</div>	
 	</body>
+	<script type="text/javascript">
+		
+		function alipay(e){
+			document.getElementById('obj1').style.visibility='hidden';	
+				var div1 = document.getElementById('obj');
+	      		div1.style.visibility='visible';
+			}
+		function weixinpay(e){
+			document.getElementById('obj').style.visibility='hidden';	
+			var div1 = document.getElementById('obj1');
+	      		div1.style.visibility='visible';
+		}
+		function hidd(e){
+			var div1 = document.getElementById('obj');
+	      		div1.style.visibility='hidden';
+	      	document.getElementById('obj1').style.visibility='hidden';	
+		}
+		function hidd1(e){
+			var div1 = document.getElementById('obj1');
+	      		div1.style.visibility='hidden';
+	      	document.getElementById('obj').style.visibility='hidden';		
+		}
+	</script>
 </html>
