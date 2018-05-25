@@ -114,3 +114,28 @@ http://airtest.netease.com/docs/docs_AirtestIDE-zh_CN/1_quick_start/4_windows_co
 
 
 https://www.jianshu.com/p/32d08455e86f     对比教程  测试工具的优缺点
+
+
+http://www.51testing.com/html/81/15074981-3485387.html    android测试工具
+
+https://blog.csdn.net/alpha58/article/details/60877978    android  获取经纬度
+
+
+https://www.cnblogs.com/lackey/p/6297115.html   delphi 多线程
+
+
+https://blog.csdn.net/liuchuanhong1/article/details/54603546                 java消息队列
+
+
+https://blog.csdn.net/u014341567/article/details/68483288                    Windows安装nvm
+
+
+https://github.com/white-cat/ThinkAndroid
+
+
+http://www.cnblogs.com/landeanfen/                            很好的一个微博
+
+
+https://blog.csdn.net/evankaka/article/details/47858707        Dubbo
+
+https://www.w3cschool.cn/shiro/uxtg1ifx.html                   shiro  教程
