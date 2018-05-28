@@ -139,3 +139,13 @@ http://www.cnblogs.com/landeanfen/                            很好的一个微博
 https://blog.csdn.net/evankaka/article/details/47858707        Dubbo
 
 https://www.w3cschool.cn/shiro/uxtg1ifx.html                   shiro  教程
+
+https://github.com/leelance/spring-boot-all                    spring-boot-all
+
+
+https://github.com/hs-web/hsweb-framework                      hsweb-framework 
+
+
+https://github.com/527515025/springBoot                        shiro    
+
+https://blog.csdn.net/wangsfine/article/details/53375343       android6.0 以后  需要动态注入权限
