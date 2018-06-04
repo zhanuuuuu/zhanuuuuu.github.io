@@ -20,7 +20,11 @@
     	
     }
     .parent {
+    	/*
     	border: 1px solid gray;
+
+    	 */
+    	
     	display: flex;
     	flex-direction: row;
     	border-radius: 6px;
@@ -30,14 +34,14 @@
     	border: 1px solid gray;
     	*/
     	height: 50px;
-    	width: 88%;
+    	width: 82%;
     }
     .chir_right{
     	/*
     	border: 1px solid red;
     	 */
     	height: 50px;
-    	width: 10%;
+    	width: 16%;
     }
     .parent .chir_left .goodName{
     	/*
@@ -46,16 +50,21 @@
 		width: 100%;
 		overflow: hidden; 
 		white-space:nowrap;
-		font-size: 15px;
+		font-size: 13px;
+		font-weight:350;
     }
 	
 	h3{
-		color: red;
+		font-family: “Microsoft YaHei” ! important; 
 	}
 	h4 {
+		
+		/*
+		border-color: witch;
 		border-width: 2px 2px 2px 2px;
 		border-style: solid;
-		border-color: red;
+		 */
+		
 		height: 30px;
 		overflow: hidden;
 		width: 100%;
@@ -75,7 +84,8 @@
 
 	.order_left_h4{
 		border-right: thin;
-		font-size: 15px;
+		font-size: 13px;
+		font-weight:350;
 	}
 	.order_right_h4{
 		border-left: thin;
@@ -83,85 +93,114 @@
 		font-size: 12px;
 		color: gray;
 	}
-	.money{
+	.money {
 		text-align: right;
 		width: 100%;
 		font-size: 15px;
 		color: red;
 	}
+	.good_number{
+		text-align: right;
+		width: 100%;
+		font-size: 15px;
+	}
+
+	.fengexian{
+		height:1px;
+		border:none;
+		border-top:1px dashed gray;"
+	}
+	.fengexian_goods{
+		height:1px;
+		border:none;
+		border-top:1px dashed gray;"
+	}
     </style>
 </head>
 <body>
 		<h3>结算信息</h3>
+		<hr class="fengexian" />
 		<div class="parent_main">
 		<div class="order_left">
-			<h4 class="order_left_h4" style="border-bottom:thin;border-top-left-radius: 5px;">消费金额</h4>
+			
 			<h4 class="order_left_h4" style="border-bottom:thin;">单号</h4>
 			<h4 class="order_left_h4" style="border-bottom:thin;">消费时间</h4>
 			<h4 class="order_left_h4" style="border-bottom:thin;">消费积分</h4>
 			<h4 class="order_left_h4" style="border-bottom-left-radius: 5px;">香江百货电话</h4>
+			<h4 class="order_left_h4" style="border-bottom:thin;border-top-left-radius: 5px;">消费金额</h4>
 		</div>
 		<div class="order_right">
-			<h4 class="order_right_h4" style="border-bottom:thin;border-top-right-radius: 5px;">50.00&nbsp;&nbsp;&nbsp;</h4>
+			
 			<h4 class="order_right_h4" style="border-bottom:thin;">04201708300020-2005&nbsp;&nbsp;&nbsp;</h4>
 			<h4 class="order_right_h4" style="border-bottom:thin;">2017-08-06&nbsp;&nbsp;&nbsp;</h4>
 			<h4 class="order_right_h4" style="border-bottom:thin;">+892.00&nbsp;&nbsp;&nbsp;</h4>
 			<h4 class="order_right_h4" style="border-bottom-right-radius: 5px;">0026-02565412&nbsp;&nbsp;&nbsp;</h4>
+			<h4 class="order_right_h4" style="border-bottom:thin;border-top-right-radius: 5px;color: red;">￥50.00&nbsp;&nbsp;&nbsp;</h4>
 		</div>
 		</div>
-
+		
 		<h3>商品信息</h3>
+		<hr class="fengexian" />
 		<div class="parent">
 				<div class="chir_left"> 
 					<p class="goodName">商品名称:<span style="font-size: 13px;">500ml洗衣液wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww</span></p>
-					<p class="goodName">商品数量:5</p>
+					
 				</div>
 
 				<div class="chir_right">
-					<p class="money">200&nbsp;&nbsp;</p>
+					<p class="money">￥200&nbsp;&nbsp;</p>
+					<p class="good_number">x5&nbsp;&nbsp;</p>
 				</div>
 		</div>
+		<hr class="fengexian_goods" />
 		<div class="parent">
 				<div class="chir_left"> 
 					<p class="goodName">商品名称:<span style="font-size: 13px;">500ml洗衣液wwwwwwwwww</span></p>
-					<p class="goodName">商品数量:5</p>
+					
 				</div>
 
 				<div class="chir_right">
-					<p class="money">200&nbsp;&nbsp;</p>
+					<p class="money">￥200&nbsp;&nbsp;</p>
+					<p class="good_number">x5&nbsp;&nbsp;</p>
 				</div>
 		</div>
+		<hr class="fengexian_goods" />
 		<div class="parent">
 				<div class="chir_left"> 
 					<p class="goodName">商品名称:<span style="font-size: 13px;">500ml洗衣液wwwwwwwwww</span></p>
-					<p class="goodName">商品数量:5</p>
+					
 				</div>
 
 				<div class="chir_right">
-					<p class="money">200&nbsp;&nbsp;</p>
+					<p class="money">￥200&nbsp;&nbsp;</p>
+					<p class="good_number">x5&nbsp;&nbsp;</p>
 				</div>
 		</div>
+		<hr class="fengexian_goods" />
 		<div class="parent">
 				<div class="chir_left"> 
 					<p class="goodName">商品名称:<span style="font-size: 13px;">500ml洗衣液wwwwwwwwww</span></p>
-					<p class="goodName">商品数量:5</p>
+					
 				</div>
 
 				<div class="chir_right">
-					<p class="money">200&nbsp;&nbsp;</p>
+					<p class="money">￥200&nbsp;&nbsp;</p>
+					<p class="good_number">x5&nbsp;&nbsp;</p>
 				</div>
 		</div>
+		<hr class="fengexian_goods" />
 		<div class="parent">
 				<div class="chir_left"> 
 					<p class="goodName">商品名称:<span style="font-size: 13px;">500ml洗衣液wwwwwwwwww</span></p>
-					<p class="goodName">商品数量:5</p>
+					
 				</div>
 
 				<div class="chir_right">
-					<p class="money">200&nbsp;&nbsp;</p>
+					<p class="money">￥200&nbsp;&nbsp;</p>
+					<p class="good_number">x5&nbsp;&nbsp;</p>
 				</div>
 		</div>
-
+        <hr class="fengexian_goods" />
 		
 
 		<div class="parent">
