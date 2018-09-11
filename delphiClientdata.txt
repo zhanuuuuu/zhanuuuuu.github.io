@@ -1,0 +1,59 @@
+try 
+
+    ds1.Close;
+    ds1.CommandText := 'select id,name from mytable';
+    ds1.Open;
+    if ds1.Eof then//记录为空
+    begin
+      Result := 'norecord';
+      Exit;
+    end;
+    ds1.First;
+    while not ds1.Eof do
+    begin
+      StrRes := StrRes + IntToStr(ds1['id']) + ',';//ds1['id'] 注意这里，返回值是不一定的要根据实际情况使用，否则崩溃
+
+      StrRes := ds1.fields[4].AsString;//对于日期类型的字段要非常特殊的对待
+      ds1.Next();
+    end;
+    ds1.Close;
+
+  except
+    Result := 'Error';
+  end;
+
+
+var
+  bk:TBookmark;
+begin
+  GoodsList.Clear;
+ // list.Add('''''');
+
+   with cdsList do
+  begin
+
+    if not Active then Exit;
+    Screen.Cursor := crSQLWait;
+    bk:=GetBookmark;
+    DisableControls;
+    First;
+    while not Eof do
+    begin
+      Edit;
+
+      FieldByName('IS_log_in').AsBoolean:=True;
+      GoodsList.Add(fieldbyname('cGoodsNo').AsString);
+      //list.Add(Fieldbyname('IS_log_in').Value);
+//      GoodsList.Sorted := True;  //需要先指定排序
+//      GoodsList.Duplicates := dupIgnore;  //如有重复值则放弃
+
+      Post;
+      Next;
+    end;
+    GotoBookmark(bk);
+    FreeBookmark(bk);
+    EnableControls;
+    Screen.Cursor := crDefault;
+  end;
+  //ShowMessage(getListstrings(GoodsList));
+end;
