@@ -149,3 +149,4 @@ https://github.com/hs-web/hsweb-framework                      hsweb-framework
 https://github.com/527515025/springBoot                        shiro    
 
 https://blog.csdn.net/wangsfine/article/details/53375343       android6.0 以后  需要动态注入权限
+傻傻
